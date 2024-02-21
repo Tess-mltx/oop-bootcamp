@@ -23,26 +23,26 @@
     <main>
         <section>
             <h2>Average notes</h2>
-            <p><?php echo $averageNoteG1; ?></p>
-            <p><?php echo $averageNoteG2; ?></p>
+            <p><?= $averageNoteG1?></p>
+            <p><?= $averageNoteG2?></p>
         </section>
 
         <section>
             <h2>Best and lower note</h2>
-            <p><?php echo $maxNoteG1; ?></p>
-            <p><?php echo $minNoteG2; ?></p>
+            <p><?= $maxNoteG1 ?></p>
+            <p><?= $minNoteG2 ?></p>
         </section>
 
         <section>
             <h2>Change group</h2>
-            <p><?php echo $changeStudent1; ?></p>
-            <p><?php echo $changeStudent2; ?></p>
+            <p><?= $changeStudent1 ?></p>
+            <p><?= $changeStudent2 ?></p>
         </section>
 
         <section>
             <h2>New average notes</h2>
-            <p><?php echo $newAverageNoteG1; ?></p>
-            <p><?php echo $newAverageNoteG2; ?></p>
+            <p><?= $newAverageNoteG1 ?></p>
+            <p><?= $newAverageNoteG2 ?></p>
         </section>
     </main>
 
