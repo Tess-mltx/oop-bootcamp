@@ -99,3 +99,21 @@ function getMinNotesStudent(array $students, string $targetGroup) {
 
     return "The lower note in group " . $targetGroup . " is " . $theStudent->getName() . " with : " . $theStudent->getNote() . " points.";
 }
+
+function SetGroupByName(string $targetName, string $newGroup, array $students){
+    $selectedStudent = null;
+
+foreach ($students as $student) {
+    if ($student->getName() == $targetName) {
+        $selectedStudent = $student;
+        break;  // arrêter la boucle si la personne est trouvée
+    }
+}
+
+if ($selectedStudent !== null) {
+    $selectedStudent->setGroup($newGroup);
+    echo "$targetName is now in the group $newGroup";
+} else {
+    echo "Not found student with the name $targetName";
+}
+}
