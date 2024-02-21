@@ -28,25 +28,7 @@ class Students{
 
     public function setGroup(string $value) {
         $this->group = $value;
-    }
-
-    public static function getAverageNote(array $students, string $targetGroup) {
-        $count = 0;
-        $total = 0;
-
-        foreach ($students as $student) {
-            if ($student->getGroup() == $targetGroup) {
-                $count++;
-                $total += $student->getNote();
-            }
-        }
-
-        if ($count > 0) {
-            $averageNote = $total / $count;
-            return "The average score of group $targetGroup is: " . $averageNote;
-        } else {
-            return "No students found in group $targetGroup";
-        }
+        return "$this->name is now in group $this->group";
     }
 
 }
@@ -74,3 +56,46 @@ $students = [
     new Students("Ryan", 10, "A"),
     new Students("Sophia", 1, "B"),
 ];
+
+function getAverageNote(array $students, string $targetGroup) {
+    $count = 0;
+    $total = 0;
+
+    foreach ($students as $student) {
+        if ($student->getGroup() == $targetGroup) {
+            $count++;
+            $total += $student->getNote();
+        }
+    }
+
+    if ($count > 0) {
+        $averageNote = $total / $count;
+        return "The average score of group $targetGroup is: " . $averageNote;
+    } else {
+        return "No students found in group $targetGroup";
+    }
+}
+
+function getMaxNotesStudent(array $students, string $targetGroup) {
+    $theStudent = null;
+
+    foreach ($students as $student) {
+        if ($student->getGroup() == $targetGroup && ($theStudent == null || $student->getNote() > $theStudent->getNote())) {
+            $theStudent = $student;
+        }
+    }
+
+    return "The best note in group " . $targetGroup . " is " . $theStudent->getName() . " with : " . $theStudent->getNote() . " points.";   
+}
+
+function getMinNotesStudent(array $students, string $targetGroup) {
+    $theStudent = null;
+
+    foreach ($students as $student) {
+        if ($student->getGroup() == $targetGroup && ($theStudent == null || $student->getNote() < $theStudent->getNote())) { // Not yet solution for conditional symbol
+            $theStudent = $student;
+        }
+    }
+
+    return "The lower note in group " . $targetGroup . " is " . $theStudent->getName() . " with : " . $theStudent->getNote() . " points.";
+}

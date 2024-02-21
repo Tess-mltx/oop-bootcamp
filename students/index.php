@@ -1,6 +1,8 @@
 <?php
 require('students.php');
 
-echo Students::getAverageNote($students, "A") . "</br>";
-echo Students::getAverageNote($students, "B");
+echo getAverageNote($students, "A") . "</br>";
+echo getAverageNote($students, "B") . "</br>";
 
+echo getMaxNotesStudent($students, "A") . "</br>";
+echo getMinNotesStudent($students, "B") . "</br>";
