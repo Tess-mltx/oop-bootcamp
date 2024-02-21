@@ -1,13 +1,16 @@
 <?php
 require('students.php');
 
-echo getAverageNote($students, "A") . "</br>";
-echo getAverageNote($students, "B") . "</br>";
+$averageNoteG1 = getAverageNote($students, "A");
+$averageNoteG2 = getAverageNote($students, "B");
 
-echo getMaxNotesStudent($students, "A") . "</br>";
-echo getMinNotesStudent($students, "B") . "</br>";
-echo SetGroupByName("Ryan", "B", $students) . "</br>";
-echo SetGroupByName("Sophia", "A", $students) . "</br>";
+$maxNoteG1 = getMaxNotesStudent($students, "A");
+$minNoteG2 = getMinNotesStudent($students, "B");
 
-echo getAverageNote($students, "A") . "</br>";
-echo getAverageNote($students, "B") . "</br>";
+$changeStudent1 = SetGroupByName("Ryan", "B", $students);
+$changeStudent2 = SetGroupByName("Sophia", "A", $students);
+
+$newAverageNoteG1 = getAverageNote($students, "A");
+$newAverageNoteG2 = getAverageNote($students, "B");
+
+require('template.php');

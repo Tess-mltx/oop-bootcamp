@@ -112,8 +112,8 @@ foreach ($students as $student) {
 
 if ($selectedStudent !== null) {
     $selectedStudent->setGroup($newGroup);
-    echo "$targetName is now in the group $newGroup";
+    return "$targetName is now in the group $newGroup";
 } else {
-    echo "Not found student with the name $targetName";
+    return "Not found student with the name $targetName";
 }
 }
